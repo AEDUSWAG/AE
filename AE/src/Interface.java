@@ -39,7 +39,6 @@ public class Interface extends JFrame implements ActionListener {
     fonctions.add(new If(new Capteur()));
     fonctions.add(new TournerAGauche(5000));
     //lignes à supprimer
-    sfsd
     
     
     enregistrer.addActionListener(this);
