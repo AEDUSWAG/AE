@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class Fonctions implements Serializable{
 	boolean bloc;
 	int boucle;
-	static final int s=100;
+	static final int s=200;
 	public Fonctions(boolean b, int boucle) {
 		bloc = b;
 		this.boucle = boucle;

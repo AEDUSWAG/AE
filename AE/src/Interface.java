@@ -36,8 +36,9 @@ public class Interface extends JFrame implements ActionListener {
     setBackground(Color.WHITE);
     
     fonctions.add(new Avancer());
-    fonctions.add(new If(new Capteur()));
+    fonctions.add(new If(new Capteur(), 2));
     fonctions.add(new TournerAGauche(5000));
+    fonctions.add(new Arreter());
     //lignes à supprimer
     
     enregistrer.addActionListener(this);

@@ -3,8 +3,7 @@ import java.util.LinkedList;
 
 public class SauvegardeVersArduino {
 	static void sauvegarder(LinkedList<Fonctions> fn) throws IOException {
-		int i=0;
-		LinkedList<String> l = new LinkedList<String>();
+		LinkedList<Integer> l = new LinkedList<Integer>();
 		PrintWriter out = new PrintWriter("Arduino/Arduino.ino");
 		FileOutputStream bin = new FileOutputStream("Arduino/Arduino.bin");
 		ObjectOutputStream objOut = new ObjectOutputStream(bin);
@@ -22,17 +21,22 @@ public class SauvegardeVersArduino {
 		out.println("void loop() {");
 		for (Fonctions f : fn) {
 			if (f.bloc) {
-				l.add(i,f.toString()+" {");
-				l.add(i+1, "}");
-				i+=1;
+				out.println(f+ " {");
+				l.add(f.boucle);
 			}
 			else {
-				l.add(i, f.toString());
-				i+=1;
+				out.println(f);
 			}
-		}
-		for (String ln : l) {
-			out.println(ln);
+			for (int i=0; i<l.size(); i++) {
+				if (l.get(i)==0) {
+					out.println("}");
+					l.remove(i);
+				}
+				else {
+					l.set(i, l.get(i)-1);
+				}
+				
+			}
 		}
 		out.println("}");
 		out.close();

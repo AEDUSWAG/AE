@@ -22,5 +22,9 @@ analogWrite(fr, 0);
 analogWrite(fl, 0);
 analogWrite(br, 0);
 analogWrite(bl, 0);
+analogWrite(fr, 0);
+analogWrite(fl, 0);
+analogWrite(br, 0);
+analogWrite(bl, 0);
 }
 }
